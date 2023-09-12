@@ -1,7 +1,10 @@
 # FedDIP
 ## How to use?
-All functions (procedures) used on clients are stored in 'client.py', including different training functions for different algorithms. Functions for the server to execure are stored in ‘fl_functions’. 
-Utilization tools are stored in 'functions_new.py'. 'exp_args' include all arguments for experiments. 'fl_server' stores the FedDIP algorithm. If no 'prune' and 'sparse', it reduces to Fedavg.
+1. All functions (procedures) used on clients are stored in **'client.py'**, including different training functions for different algorithms. 
+2. Functions for the server to execure are stored in **‘fl_functions’**. 
+3. Utilization tools are stored in **'functions_new.py'**. 
+4. **'exp_args'** include all arguments for experiments. 
+5. **'fl_server'** stores the FedDIP algorithm. If no 'prune' and 'sparse', it reduces to Fedavg.
 
 ## How to run experiments? (Example: FedDIP and FedDST; Definition of arguments refers to exp_args.py)
 ### 1. Run FedDIP on CIFAR10 with AlexNet
