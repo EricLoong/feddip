@@ -23,9 +23,6 @@ parser.add_argument('--df', type=int, default=1,
 parser.add_argument('--group', type=int, default=3,
                     help='how many number of elements in one group')
 parser.add_argument('--amount_err', type=float, default=0.1, help='The amount of errors kept')
-parser.add_argument('--apprx', type=int, default=1,
-                    help='Decide whether conduct weight approximation, 1 means yes')
-
 # Prune and sparse arguments
 parser.add_argument("--erk_power_scale", type=float, default=1)
 parser.add_argument('--amount_sparsity', type=float, required=True,
