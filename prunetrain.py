@@ -206,7 +206,7 @@ def fed_avg_prunetrain():
             top5_acc_train.append(temp_top5_acc_train)
             top5_acc_test.append(temp_top5_acc_test)
 
-        # print("--- %s seconds ---" % (time.time() - start_time))
+        print("--- %s seconds ---" % (time.time() - start_time))
 
     # Store model, loss and validation accuracy
     df_loss = pd.DataFrame(data=train_loss)

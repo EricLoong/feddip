@@ -158,14 +158,6 @@ def preprocessed_data(data_list, batch_size, n_users, data_name='cifar10', num_w
 
             # Return even weights for IID case
             even_weights = [1 / n_users] * n_users
-            #train_labels_all = []
-            #test_labels_all = []
-
-            #for user_id, (train_indices, test_indices) in idx_users:
-            #    train_labels_for_user = [train_labels[i] for i in train_indices]
-            #    test_labels_for_user = [test_labels[i] for i in test_indices]
-            #    train_labels_all.append(train_labels_for_user)
-            #    test_labels_all.append(test_labels_for_user)
 
             return [user_index, idx_users], (train_dl, test_dl), even_weights
 

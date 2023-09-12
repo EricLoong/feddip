@@ -93,7 +93,6 @@ def fed_avg_snip():
             k += 1
             print(f'Finish Local Training for {k} users. And current user is {index}')
 
-        # delta_loss_record.append(np.mean(np.array(local_delta_epochs)))
         server = ServerCollect(args=args, device=device)
         global_receive = server.average_weights(weight=local_waps,pctg=pctg_4_avg,selected_clients=user_index_ts)
         global_model.load_state_dict(global_receive)
@@ -112,7 +111,6 @@ def fed_avg_snip():
                                                                sparse=args.sparse)
             temp_glo_acc, temp_glo_loss = server.inference(model=copy.deepcopy(global_model), total_test=test_dl,
                                                            sparse=args.sparse)
-            # print(f'Current loss is{temp_glo_loss}')
             glo_loss.append(temp_glo_loss)
             glo_acc.append(temp_glo_acc)
             train_accuracy.append(temp_train_acc)
@@ -124,7 +122,6 @@ def fed_avg_snip():
                                                                                     sparse=args.sparse)
             temp_glo_acc, temp_glo_loss, temp_top5_acc_test = server.inference(model=copy.deepcopy(global_model),
                                                                                total_test=test_dl, sparse=args.sparse)
-            # print(f'Current loss is{temp_glo_loss}')
             glo_loss.append(temp_glo_loss)
             glo_acc.append(temp_glo_acc)
             print('Accuracy Record is:', glo_acc)

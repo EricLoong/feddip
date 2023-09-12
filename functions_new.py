@@ -17,9 +17,6 @@ def keep_k_error(error, amount=0.1):
     err_sparse = temp_err.reshape(shape)
     return err_sparse
 
-# wap_list,resi_list,bm_list = weight_approx_sparse_prune(test_model_reg)
-# new_model = recover_from_wap(wap=wap_list,pos=resi_list,bm_list=bm_list,model=copy.deepcopy(test_model_reg))
-# torch.sum(new_model.state_dict()['features.3.weight']-test_model_reg.state_dict()['features.3.weight'])
 
 def norm_whole_model(model):
     norm_sum = 0
@@ -268,7 +265,7 @@ def prunefl_reconfig(aggregate_gradients, layer_times, prunable_params=0.3):
         for i, g in aggregate_gradients.items():
             if "bias" not in i:
                 #g.square_()
-                g = g.div(layer_times[i])  # remember change the layer_times to satisfy this
+                g = g.div(layer_times[i])
                 importances.append(g)
 
         t = 0.2
@@ -400,7 +397,6 @@ def create_pat_partition(train_ds, num_clients, num_classes, batch_size, class_p
     for i in range(num_classes):
         idx_for_each_class.append(np.array([idx for idx, label in enumerate(dataset_label) if label == i]))
 
-    #print("Idx for each class:", idx_for_each_class)  # Print statement 1
 
     class_num_per_client = [class_per_client for _ in range(num_clients)]
 

@@ -13,8 +13,6 @@ import tqdm
 torch.cuda.empty_cache()
 
 
-# For comparison, we only do experiment for AlexNet.
-# Local iteration equals to 5
 # The idea of PruneFL: Firstly initialize the mask on one client until converge. For each global round, local client update
 # several iterations and apply the masks.
 
@@ -96,8 +94,6 @@ def prunefl_server():
             init_reconfig_mask = prunefl_reconfig(init_aggrted_g,layer_times=layer_times,prunable_params=args.init_sparsity)
             init_server.set_weight_by_mask(init_client.model,mask=init_reconfig_mask)
             print('Reconfiguration at round:', r)
-        #temp_delta_local_init = inform_loss_norm(model1=init_model_temp, model2=init_model)
-        #local_delta_init_rounds.append(temp_delta_local_init)
         if r > 5:
             #diff_init = local_delta_init_rounds[r] - local_delta_init_rounds[r - 1]
             if data_name!='cifar100':
@@ -201,8 +197,6 @@ def prunefl_server():
         temp_comm_cost = comm_costs_accum[-1] + upload_costs_temp + download_costs_temp
         comm_costs_accum.append(temp_comm_cost)
         print(f'Current loss is{temp_glo_loss}')
-        #glo_loss.append(temp_glo_loss)
-        #glo_acc.append(temp_glo_acc)
         train_accuracy.append(temp_train_acc)
         train_loss.append(temp_train_loss)
         print('Accuracy Record is:', glo_acc)

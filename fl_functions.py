@@ -1,5 +1,4 @@
 # import os
-# os.chdir('/Users/ericlong/PycharmProjects/reuse_in_cnn/cifar10_FL')
 
 from functions_new import *
 import torch.nn as nn
