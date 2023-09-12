@@ -13,7 +13,7 @@ FedDIP: -python --epochs 1000 --num_users 50 --local_ep 5 --amount_sparsity 0.95
 ### 2. Run FedDST on CIFAR100 with ResNet18
 FedDST: -python feddst.py --feddst --epochs 1000 --num_users 50 --local_ep 5 --amount_sparsity 0.90 --model resnet18 --dataset cifar100 --frac 0.1 --parallel 0 --num_workers 2 --reconfig_interval 20 
 
-### 3. Change the differnt .py files to run different algorithms according to their names. 
+### 3. Change differnt PRIFIX.py files to run different baseline algorithms according to their names. 
 
 ## Acknowledgements
 Some code is modified based on the following repositories: 
