@@ -10,3 +10,20 @@ FedDIP: -python --epochs 1000 --num_users 50 --local_ep 5 --amount_sparsity 0.95
 FedDST: -python feddst.py --feddst --epochs 1000 --num_users 50 --local_ep 5 --amount_sparsity 0.90 --model resnet18 --dataset cifar100 --frac 0.1 --parallel 0 --num_workers 2 --reconfig_interval 20 
 
 ### 3. Change the differnt .py files to run different algorithms according to their names. 
+
+## Requirements
+python==3.7.*
+scikit-learn
+matplotlib
+seaborn
+tensorboard_logger
+torchmetrics
+pandas
+torch
+numpy
+torchvision
+
+## Acknowledgements
+Some code is modified based on the following repositories: 
+1. https://github.com/rong-dai/DisPFL
+2. https://github.com/jiangyuang/PruneFL
