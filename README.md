@@ -20,3 +20,16 @@ Some code is modified based on the following repositories:
 1. https://github.com/rong-dai/DisPFL
 2. https://github.com/jiangyuang/PruneFL
 3. https://github.com/namhoonlee/snip-public
+
+## Citation
+
+If you find this work useful, please consider citing:
+
+@inproceedings{long2023feddip,
+  title={Feddip: Federated learning with extreme dynamic pruning and incremental regularization},
+  author={Long, Qianyu and Anagnostopoulos, Christos and Parambath, Shameem Puthiya and Bi, Daning},
+  booktitle={2023 IEEE International Conference on Data Mining (ICDM)},
+  pages={1187--1192},
+  year={2023},
+  organization={IEEE}
+}
